@@ -1,15 +1,14 @@
-export function Character (id, health, armor, strength, inventory) {
-  this.id = id;
-  this.level = [];
-  this.health = health;
-  this.armor = armor;
-  this.strength = strength;
-  this.inventory = inventory;
+export function Character (id, level, health, armor, strength, inventory) {
+  this.id = 1;
+  // this.level = level;
+  this.health = 100;
+  this.armor = 50;
+  this.strength = 1;
+  this.inventory = 0;
 };
 
 
-
-// Character.prototype.level = function(){
-//   let level = 1
-//   return level;
-// }
+Character.prototype.level = function(){
+  this.level = 1;
+  return this.level;
+};
