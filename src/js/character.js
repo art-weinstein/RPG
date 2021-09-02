@@ -1,23 +1,41 @@
-export function Character (id, experience) {
-  this.id = id;
-  // this.level = level;
+export class Character {
+  constructor(name, armor, strength) {
+  this.name = name;
+  this.level = 1;
   this.health = 100;
-  this.armor = 50;
-  this.strength = 1;
+  this.armor = armor;
+  this.strength = strength;
   this.inventory = 0;
-  this.experience = experience;
-};
+  this.experience = 0;
+  }
 
-Character.prototype.assignId = function() {
-  let currentId = this.id;
-  currentId = 1
-};
 
-Character.prototype.level = function(){
-  let currentExperience = this.experience;
-  let currentLevel = 0;
-  if (currentExperience === 0){
-    currentLevel = 1;
-    return currentLevel;
+  levelChange() {
+    if (this.experience === 50) {
+      this.level = 2;
     };
+  }; 
+
+
+  armor() {
+    let currentArmor = this.armor;
+    currentArmor = 0;
+    if (this.level <= 10){
+      currentArmor = 50;
+      return currentArmor;
+    };
+  };
 };
+
+export class CyberWizard  extends Character {
+  constructor (name, armor, strength){
+    super(name, armor, strength);
+    this.magic = 0;
+  }
+  magicChange() {
+    if (this.level === 2){
+      this.magic = 2;
+    }
+  }
+}
+
