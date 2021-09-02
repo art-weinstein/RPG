@@ -30,20 +30,20 @@ export class Character {
   };
 
   armorChange() {
-    if (this.level === 2){
-      this.armor = 50
+    for(let i = 0; i <= this.level; i++) {
+      this.armor = (this.level * 25);
     };
   };
 };
 
 export class CyberWizard  extends Character {
-  constructor (name, armor, strength){
+  constructor (name){
     super(name);
     this.magic = 0;
   }
   magicChange() {
-    if (this.level === 2){
-      this.magic = 2;
+    for(let i = 0; i <= this.level; i++) {
+      this.magic = (this.level + 2)
     }
   }
 }
