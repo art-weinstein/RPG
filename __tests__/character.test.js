@@ -3,29 +3,42 @@ import { CyberWizard } from "../src/js/character";
 
 describe('Character', () => {
   test('Should create character object' , () => {
-    let character = new Character("Kevin", 1, 1);
+    let character = new Character("Kevin", 1);
     expect(character.name).toEqual("Kevin");
     expect(character.level).toEqual(1);
     expect(character.health).toEqual(100);
-    expect(character.armor).toEqual(1);
-    expect(character.strength).toEqual(1);
+    expect(character.armor).toEqual(0);
+    expect(character.strength).toEqual(30);
     expect(character.inventory).toEqual(0);
     expect(character.experience).toEqual(0);
   });
   test ('Should set character level to 2', () =>{
-    let character = new Character("Kevin", 1, 10);
-    character.experience = 50;
+    let character = new Character("Kevin");
+    character.experience = 100;
     character.levelChange();
     expect(character.level).toEqual(2);
+  });  
+  test("Should set armor for new Character to 50", () =>{
+    let character = new Character("Kevin");
+    character.experience = 100;
+    character.levelChange();
+    character.armorChange();
+    expect(character.armor).toEqual(50);
   });
     test ("Should set CyberWizard magic to 2 when level is 2", () => {
-      let cyberWiz = new CyberWizard("Kevin", 1, 10);
-      cyberWiz.experience = 50;
+      let cyberWiz = new CyberWizard("Kevin");
+      cyberWiz.experience = 100;
       cyberWiz.levelChange();
       cyberWiz.magicChange();
       expect(cyberWiz.magic).toEqual(2);
-    
   });
+  test ("Should set Warrior strength to 50 when level is 2", () => {
+    let warrior = new Warrior("Kevin");
+    warrior.experience = 100;
+    warrior.levelChange();
+    warrior.strengthChange();
+    expect(warrior.strength).toEqual(50)
+});
 
 
   // test("should return id of 1", () => {

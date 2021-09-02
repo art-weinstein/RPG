@@ -1,28 +1,35 @@
 export class Character {
-  constructor(name, armor, strength) {
+  constructor(name) {
   this.name = name;
   this.level = 1;
   this.health = 100;
-  this.armor = armor;
-  this.strength = strength;
+  this.armor = 0;
+  this.strength = 30;
   this.inventory = 0;
   this.experience = 0;
   }
 
 
+  // levelChange() {
+  //   if (this.experience === 50) {
+  //     this.level = 2;
+  //   };
+  // }; 
+
+  
   levelChange() {
-    if (this.experience === 50) {
-      this.level = 2;
+    for (let i = 0; i <= this.experience; i++) {
+    this.level = (this.experience / 50); 
     };
   }; 
 
+  strengthChange (){
 
-  armor() {
-    let currentArmor = this.armor;
-    currentArmor = 0;
-    if (this.level <= 10){
-      currentArmor = 50;
-      return currentArmor;
+  }
+
+  armorChange() {
+    if (this.level === 2){
+      this.armor = 50
     };
   };
 };
