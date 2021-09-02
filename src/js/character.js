@@ -8,14 +8,6 @@ export class Character {
   this.inventory = 0;
   this.experience = 0;
   }
-
-
-  // levelChange() {
-  //   if (this.experience === 50) {
-  //     this.level = 2;
-  //   };
-  // }; 
-
   
   levelChange() {
     for (let i = 0; i <= this.experience; i++) {

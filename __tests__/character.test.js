@@ -61,14 +61,11 @@ describe('Character', () => {
     character.armorChange();
     expect(character.armor).toEqual(50);
   });
-
-
-  // test("should return id of 1", () => {
-  //   let character = new Character(id, armor, experience);
-  //   expect(character.id).toEqual(1);
-  // });
-  // test("based on level being 1, armor should return 50", () => {
-  //   let character = new Character(id, armor, experience)
-  //   expect(character.armor).toEqual(50)
-  // });
+  test("Should set CyberWizard strength to 10 when level is 2", () => {
+    let cyberWiz = new CyberWizard;
+    cyberWiz.experience = 100;
+    cyberWiz.levelChange();
+    cyberWiz.strengthChange();
+    expect(cyberWiz.strength).toEqual(10);
+  });
 });
