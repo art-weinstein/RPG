@@ -4,7 +4,7 @@ export class Character {
   this.level = 1;
   this.health = 100;
   this.armor = 0;
-  this.strength = 30;
+  this.strength = 0;
   this.inventory = 0;
   this.experience = 0;
   }
@@ -24,8 +24,10 @@ export class Character {
   }; 
 
   strengthChange (){
-
-  }
+    for(let i = 0; i <= this.level; i++) {
+      this.strength = (this.level *  5);
+    };
+  };
 
   armorChange() {
     if (this.level === 2){
@@ -36,7 +38,7 @@ export class Character {
 
 export class CyberWizard  extends Character {
   constructor (name, armor, strength){
-    super(name, armor, strength);
+    super(name);
     this.magic = 0;
   }
   magicChange() {
@@ -44,5 +46,12 @@ export class CyberWizard  extends Character {
       this.magic = 2;
     }
   }
+}
+
+export class Warrior extends Character {
+  constructor (name){
+    super(name);
+  }
+
 }
 
