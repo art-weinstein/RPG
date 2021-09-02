@@ -1,5 +1,6 @@
 import { Character } from "../src/js/character";
 import { CyberWizard } from "../src/js/character";
+import { Warrior } from "../src/js/character";
 
 describe('Character', () => {
   test('Should create character object' , () => {
@@ -39,13 +40,20 @@ describe('Character', () => {
     character.strengthChange();
     expect(character.strength).toEqual(10);
   });
-//   test ("Should set Warrior strength to 50 when level is 2", () => {
-//     let warrior = new Warrior("Kevin");
-//     warrior.experience = 100;
-//     warrior.levelChange();
-//     warrior.strengthChange();
-//     expect(warrior.strength).toEqual(50)
-// });
+  test ("Should set Warrior strength to 20 when level is 2", () => {
+    let warrior = new Warrior("Kevin");
+    warrior.experience = 100;
+    warrior.levelChange();
+    warrior.warriorStrength();
+    expect(warrior.strength).toEqual(20);
+});
+  test ("Should set Warrior strength to 20 when level is 2", () => {
+    let warrior = new Warrior("Kevin");
+    warrior.experience = 150;
+    warrior.levelChange();
+    warrior.warriorStrength();
+    expect(warrior.strength).toEqual(25);
+  });
 
 
   // test("should return id of 1", () => {

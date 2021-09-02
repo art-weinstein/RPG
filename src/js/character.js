@@ -52,6 +52,10 @@ export class Warrior extends Character {
   constructor (name){
     super(name);
   }
-
+  warriorStrength() {
+    for(let i = 0; i <= this.level; i++) {
+      this.strength = ((this.level *  5) + 10);
+    }
+  }
 }
 
